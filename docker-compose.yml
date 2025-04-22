@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    container_name: db
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: iris
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  preprocessing:
+    build: ./preprocessing
+    depends_on:
+      - db
+    volumes:
+      - ./data:/data
+
+  model:
+    build: ./model
+    depends_on:
+      - db
+      - preprocessing
+
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"
+    depends_on:
+      - model
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+
+volumes:
+  pgdata:
