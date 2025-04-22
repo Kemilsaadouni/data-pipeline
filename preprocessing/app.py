@@ -46,7 +46,7 @@ if len(df) < initial_len:
     print(f"🧹 {initial_len - len(df)} doublons supprimés.")
 
 # 5. Suppression des colonnes inutiles pour ce projet
-df = df[['sepal_length', 'sepal_width']]
+df = df[['sepal_length', 'sepal_width', 'species']]
 
 # 6. Connexion à PostgreSQL via SQLAlchemy
 engine = create_engine('postgresql://user:password@db:5432/iris')

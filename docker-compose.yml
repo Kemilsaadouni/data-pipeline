@@ -19,6 +19,7 @@ services:
     depends_on:
       - db
     volumes:
+      - ./preprocessing/app.py:/app/app.py
       - ./data:/data
 
   model:
