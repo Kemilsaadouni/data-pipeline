@@ -30,3 +30,32 @@ Cloner le projet :
 git clone <lien-du-repo>
 cd data-pipeline
 ```
+
+Construire les services :
+```bash
+docker-compose build --no-cache api
+```
+
+Démarrer le pipeline :
+```bash
+docker-compose up api
+```
+
+⚠️ Si il y a un problème n'hésitez pas à exécuter la commande suivante:
+```bash
+docker-compose down
+```
+➡️ ensuite recommencez à partir de l'étape de construction des services
+
+## 📆 Démarrage et exploration
+
+### API (FastAPI)
+- Visitez : [Lien](http://localhost:8000) — page d'accueil
+- Documentation : [Lien](http://localhost:8000/docs) (Swagger UI)
+
+Exemple de requête POST dans `/predict` :
+```http
+{
+  "sepal_width": 3.1
+}
+```
