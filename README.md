@@ -27,6 +27,6 @@ De plus, n'oubliez pas de démarrer les services **Docker** et notamment **Docke
 
 Cloner le projet :
 ```bash
-git clone `lien-du-repo`
+git clone <lien-du-repo>
 cd data-pipeline
 ```
