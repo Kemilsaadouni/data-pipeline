@@ -3,12 +3,25 @@ import pandas as pd
 import mlflow
 import mlflow.sklearn
 from sqlalchemy import create_engine
+from sqlalchemy.exc import OperationalError
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 from dotenv import load_dotenv
+import time
 
 load_dotenv()
+
+def wait_for_db():
+    while True:
+        try:
+            time.sleep(20)
+            engine.connect()
+            print("✅ Connexion à la base de données réussie.")
+            break
+        except OperationalError:
+            print("⏳ Attente de la base de données...")
+            time.sleep(5)
 
 # Connexion à la base
 user = os.getenv("POSTGRES_USER")
@@ -19,7 +32,8 @@ dbname = os.getenv("POSTGRES_DB")
 
 engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{dbname}')
 
-# Chargement des données
+wait_for_db()
+
 df = pd.read_sql("SELECT * FROM iris_data", engine)
 
 X = df[['sepal_width']]
