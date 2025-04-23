@@ -130,3 +130,9 @@ data-pipeline/
 - Étendre le modèle à d'autres features (ex. largeur/longueur des pétales)
 - Meilleure gestion des erreurs dans l’API
 - Créer une interface front (web) pour l'utilisateur final
+
+## 👤 Auteurs
+- **Kémil**
+- **Jade**
+- **Sofia**
+- **Dahlia**
