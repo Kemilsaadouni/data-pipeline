@@ -29,6 +29,11 @@ services:
     depends_on:
       - db
       - preprocessing
+      - mlflow
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+    env_file:
+      - .env
 
   api:
     build: ./api
@@ -36,6 +41,11 @@ services:
       - "8000:8000"
     depends_on:
       - model
+      - mlflow
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+    env_file:
+      - .env
 
   mlflow:
     image: ghcr.io/mlflow/mlflow
@@ -43,8 +53,7 @@ services:
       - "5000:5000"
     volumes:
       - ./mlruns:/mlflow/mlruns
-    environment:
-      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    command: mlflow server --backend-store-uri /mlflow/mlruns --host 0.0.0.0 --port 5000
 
 volumes:
   pgdata:

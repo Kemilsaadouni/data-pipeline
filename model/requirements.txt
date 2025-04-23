@@ -1,0 +1,7 @@
+numpy==1.23.5
+pandas
+sqlalchemy
+psycopg2-binary
+scikit-learn==1.2.2
+mlflow
+python-dotenv
