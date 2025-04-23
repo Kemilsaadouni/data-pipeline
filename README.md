@@ -124,3 +124,9 @@ data-pipeline/
 - MLflow
 - Docker / Docker Compose
 - SQLAlchemy
+
+## 🔄 Pistes d'amélioration
+- Ajouter un Dockerfile personnalisé pour MLflow (stockage distant, tracking avancé)
+- Étendre le modèle à d'autres features (ex. largeur/longueur des pétales)
+- Meilleure gestion des erreurs dans l’API
+- Créer une interface front (web) pour l'utilisateur final
