@@ -32,6 +32,7 @@ services:
       - mlflow
     volumes:
       - ./mlruns:/mlflow/mlruns
+      - ./shared:/shared
     env_file:
       - .env
 
@@ -44,6 +45,7 @@ services:
       - mlflow
     volumes:
       - ./mlruns:/mlflow/mlruns
+      - ./shared:/shared
     env_file:
       - .env
 
@@ -58,3 +60,4 @@ services:
 volumes:
   pgdata:
   mlruns:
+  shared:

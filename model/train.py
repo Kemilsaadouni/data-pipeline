@@ -59,4 +59,12 @@ with mlflow.start_run():
     mlflow.log_metric("rmse", rmse)
     mlflow.sklearn.log_model(model, "model")
 
+    model_path = f"/mlflow/mlruns/{mlflow.active_run().info.experiment_id}/{mlflow.active_run().info.run_id}/artifacts/model"
+
+    # Enregistrement dans le fichier partagé
+    with open("/shared/last_model_path.txt", "w") as f:
+        f.write(model_path)
+
+    print(f"✅ Chemin du modèle enregistré dans /shared/last_model_path.txt : {model_path}")
+
 print("✅ Modèle enregistré avec MLflow")
