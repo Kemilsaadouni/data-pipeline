@@ -132,7 +132,7 @@ data-pipeline/
 - Créer une interface front (web) pour l'utilisateur final
 
 ## 👤 Auteurs
-- **Kémil**
-- **Jade**
-- **Sofia**
-- **Dahlia**
+- **Kémil Saadouni**
+- **Jade Saadouni**
+- **Sofia Addichane**
+- **Dahlia Khouna**
