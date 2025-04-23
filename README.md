@@ -7,23 +7,24 @@ L'objectif est de prédire la **longueur des sépales** (`sepal length`) à part
 
 Nous utilisons **Docker**, **Docker Compose**, **PostgreSQL**, **MLflow**, **scikit-learn**, **FastAPI** et **SQLAlchemy** pour concevoir un projet modulaire, réplicable et traçable.
 
----
+___
 
 ## ✨ Pour commencer
 
 Voici comment démarrer rapidement le projet sur votre machine.
 
----
+
 
 ## ⚖️ Pré-requis
 
 - Docker  
 - Docker Compose  
 
-Créer un fichier `.env` à la racine du projet avec le contenu suivant :
+Créer un fichier `.env` à la racine du projet avec les paramètres suivant en définissant les vôtres bien sûr:
 
 ```env
 POSTGRES_USER=user
 POSTGRES_PASSWORD=password
 POSTGRES_DB=iris
 POSTGRES_HOST=db
+```
