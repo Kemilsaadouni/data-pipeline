@@ -50,8 +50,8 @@ docker-compose down
 ## 📆 Démarrage et exploration
 
 ### API (FastAPI)
-- Visitez : [Lien](http://localhost:8000 "http://localhost:8000") — page d'accueil
-- Documentation : [Lien](http://localhost:8000/docs "http://localhost:8000/docs") (Swagger UI)
+- Visitez : [http://localhost:8000](http://localhost:8000) — page d'accueil
+- Documentation : [http://localhost:8000/docs](http://localhost:8000/docs) (Swagger UI)
 
 Exemple de requête POST dans `/predict` :
 ```http
