@@ -116,3 +116,11 @@ data-pipeline/
 │   └── main.py
 │   └── Dockerfile
 ```
+## 🤖 Fabriqué avec
+- Python 3.10
+- FastAPI
+- scikit-learn
+- PostgreSQL
+- MLflow
+- Docker / Docker Compose
+- SQLAlchemy
