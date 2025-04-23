@@ -1,6 +1,0 @@
-artifact_location: mlflow-artifacts:/148471298177196052
-creation_time: 1745417521774
-experiment_id: '148471298177196052'
-last_update_time: 1745417521774
-lifecycle_stage: active
-name: iris_regression
