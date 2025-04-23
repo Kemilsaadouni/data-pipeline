@@ -54,8 +54,65 @@ docker-compose down
 - Documentation : [http://localhost:8000/docs](http://localhost:8000/docs) (Swagger UI)
 
 Exemple de requête POST dans `/predict` :
-```http
+```json
 {
   "sepal_width": 3.1
 }
+```
+
+Exemple de réponse attendue :
+```json
+{
+  "predicted_sepal_length": 6.261679143079142
+}
+```
+
+### MLflow UI
+
+Accessible via : [http://localhost:5000](http://localhost:5000)
+
+Permet de visualiser :
+- Les expériences
+- Les métriques (RMSE, etc...)
+- Les versions de modèles
+
+## 🎓 Accès à la base de données
+
+Connexion la base de données depuis le conteneur Docker `db`:
+```bash
+docker exec -it db psql -U user -d iris
+```
+
+Commandes utiles :
+```sql
+-- Voir les tables
+\dt
+
+-- Aperçu des données
+SELECT * FROM iris_data LIMIT 5;
+```
+
+## 🔎 Structure du projet
+
+```bash
+data-pipeline/
+├── docker-compose.yml
+├── .env
+├── .gitignore
+├── README.md
+│
+├── data/               # Dataset CSV
+│   └── iris.csv
+│
+├── preprocessing/      # Preprocessing module
+│   └── app.py
+│   └── Dockerfile
+│
+├── model/              # Entraînement du modèle
+│   └── train.py
+│   └── Dockerfile
+│
+├── api/                # API FastAPI
+│   └── main.py
+│   └── Dockerfile
 ```
